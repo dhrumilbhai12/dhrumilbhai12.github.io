@@ -12,7 +12,7 @@ Static site (plain HTML/CSS/vanilla JS). No build step required to deploy.
 - `sitemap.xml`, `robots.txt`, `favicon.svg`, `site.webmanifest`, `_headers` (Cloudflare Pages headers), `assets/img/og.png`
 
 ## Deploy to Cloudflare Pages
-**Option A — dashboard (drag & drop):** Cloudflare dashboard → Workers & Pages → Create → Pages → *Upload assets* → name the project `tinkro` → upload this folder (or the zip contents) → Deploy. You get `https://dhrumilbhai12.github.io`.
+**Option A — dashboard (drag & drop):** Cloudflare dashboard → Workers & Pages → Create → Pages → *Upload assets* → name the project `tinkro` → upload this folder (or the zip contents) → Deploy. You get `https://tinkro.pages.dev`.
 
 **Option B — Git:** push this folder to a GitHub repo → Pages → *Connect to Git* → Framework preset: **None**, Build command: *(empty)*, Build output directory: `/` (or the folder containing `index.html`).
 
@@ -21,9 +21,9 @@ Static site (plain HTML/CSS/vanilla JS). No build step required to deploy.
 `_headers` and `404.html` are picked up automatically by Cloudflare Pages. Pages serves `/features.html` at `/features` (clean URLs); canonicals and the sitemap already use the clean form.
 
 ## Changing the domain (e.g. the planned .xyz)
-The base URL `https://dhrumilbhai12.github.io` is written into canonical tags, Open Graph/Twitter tags, JSON-LD, `sitemap.xml` and `robots.txt`.
+The base URL `https://tinkro.pages.dev` is written into canonical tags, Open Graph/Twitter tags, JSON-LD, `sitemap.xml` and `robots.txt`.
 1. Easiest: find-and-replace across the folder:
-   `grep -rl "https://dhrumilbhai12.github.io" . | xargs sed -i 's#https://dhrumilbhai12.github.io#https://tinkro.xyz#g'`
+   `grep -rl "https://tinkro.pages.dev" . | xargs sed -i 's#https://tinkro.pages.dev#https://tinkro.xyz#g'`
 2. Or edit `BASE` in the generator (`../build/common.py`) and re-run `python3 p_index.py p_tools.py p_pages.py p_blog.py p_infra.py` (run each script) — the generators are the source of truth for the HTML.
 3. In Cloudflare Pages → Custom domains, add the domain, then (optional) add a redirect from `tinkro.pages.dev`.
 Also update the "Made with Tinkro" URL baked into exported forms in `assets/js/form-builder.js`.
