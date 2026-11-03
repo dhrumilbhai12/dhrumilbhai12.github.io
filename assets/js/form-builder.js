@@ -120,7 +120,7 @@
       '.rate{display:flex;gap:8px}.rate button{width:48px;height:48px;border-radius:10px;border:1px solid #d8ceff;background:#fff;font:600 1rem inherit;cursor:pointer}.rate .sel,.rate button:hover{background:#6d4aff;color:#fff}' +
       '.row{display:flex;gap:10px;margin-top:22px}.btn{font:600 .95rem inherit;padding:12px 18px;border-radius:10px;border:1px solid #d9d8d4;background:#fff;cursor:pointer}.btn.p{background:#6d4aff;color:#fff;border-color:#6d4aff}.err{color:#b91c1c;min-height:1.4em;margin:8px 0 0;font-size:.9rem}pre{background:#fff;border:1px solid #e7e6e3;border-radius:10px;padding:14px;overflow:auto;font-size:.85rem}footer{margin-top:40px;font-size:.8rem;color:#5d5d69}footer a{color:#5332e6}' +
       '</style></head><body><main id="app"></main>\n<script>\n' +
-      '// Exported from Tinkro Free Form Builder (https://tinkro.pages.dev/tools/form-builder.html)\n' +
+      '// Exported from Tinkro Free Form Builder (https://tinkro.pages.dev/tools/form-builder)\n' +
       '// TODO: to collect responses, set ENDPOINT to a URL that accepts POST JSON (e.g. Formspree, a Cloudflare Worker, Google Apps Script).\n' +
       'var ENDPOINT = "";\nvar F = ' + data + ';\n' +
       '(function(){var app=document.getElementById("app"),cur=0,A={};function e(s){return String(s==null?"":s).replace(/[&<>"\\\']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","\\\'":"&#39;"}[c]})}' +
@@ -133,7 +133,7 @@
       'if(t.hasAttribute("data-n")){var v=A[q.id],er=app.querySelector(".err");if(q.required&&(v==null||v==="")){er.textContent="This question is required.";return}if(q.type=="email"&&v&&!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/.test(v)){er.textContent="Please enter a valid email.";return}cur++;r()}});' +
       'function done(){var out=F.qs.map(function(q){return{question:q.label,answer:A[q.id]==null?"":A[q.id]}});app.innerHTML=\'<div class="prog"><i style="width:100%"></i></div><h1>Thank you!</h1><p>Your response has been recorded.</p>\';' +
       'if(ENDPOINT){fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({form:F.title,submittedAt:new Date().toISOString(),answers:out})}).catch(function(){})}else{app.innerHTML+="<p><small>No endpoint set — here is the response (copy it):</small></p><pre>"+e(JSON.stringify(out,null,2))+"</pre>"}' +
-      'app.innerHTML+=\'<footer>Made with <a href="https://tinkro.pages.dev/tools/form-builder.html">Tinkro free form builder</a></footer>\'}r()})();\n<\/script></body></html>';
+      'app.innerHTML+=\'<footer>Made with <a href="https://tinkro.pages.dev/tools/form-builder">Tinkro free form builder</a></footer>\'}r()})();\n<\/script></body></html>';
     var blob = new Blob([html], { type: 'text/html' });
     var a = document.createElement('a'); a.href = URL.createObjectURL(blob);
     a.download = (state.title || 'form').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') + '.html';
