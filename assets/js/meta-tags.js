@@ -1,0 +1,12 @@
+(function(){
+  var fields={title:document.getElementById('mt-title'),description:document.getElementById('mt-description'),url:document.getElementById('mt-url'),image:document.getElementById('mt-image'),site:document.getElementById('mt-site'),author:document.getElementById('mt-author')};
+  var output=document.getElementById('mt-output'), status=document.getElementById('mt-status');
+  function esc(v){return String(v||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+  function update(){
+    [['title','mt-title-count',60],['description','mt-desc-count',155]].forEach(function(x){var el=document.getElementById(x[1]),n=fields[x[0]].value.length;el.textContent=n+' / '+x[2];el.className='counter '+(n>x[2]?'bad':n>x[2]*.88?'warn':'good')});
+    var t=fields.title.value||'Page title',d=fields.description.value||'',u=fields.url.value||'',im=fields.image.value||'',site=fields.site.value||'Tinkro',author=fields.author.value||'',robots=(document.getElementById('mt-index').checked?'index':'noindex')+','+(document.getElementById('mt-follow').checked?'follow':'nofollow'),card=document.getElementById('mt-card').value;
+    output.value=['<title>'+esc(t)+'</title>','<meta name="description" content="'+esc(d)+'">','<meta name="robots" content="'+robots+'">',author?'<meta name="author" content="'+esc(author)+'">':'','<meta property="og:type" content="website">','<meta property="og:site_name" content="'+esc(site)+'">','<meta property="og:title" content="'+esc(t)+'">','<meta property="og:description" content="'+esc(d)+'">',u?'<link rel="canonical" href="'+esc(u)+'">\n<meta property="og:url" content="'+esc(u)+'">':'',im?'<meta property="og:image" content="'+esc(im)+'">':'','<meta name="twitter:card" content="'+card+'">','<meta name="twitter:title" content="'+esc(t)+'">','<meta name="twitter:description" content="'+esc(d)+'">',im?'<meta name="twitter:image" content="'+esc(im)+'">':''].filter(Boolean).join('\n');
+  }
+  Object.keys(fields).forEach(function(k){fields[k].addEventListener('input',update)});document.querySelectorAll('#meta-tool input[type=checkbox],#mt-card').forEach(function(x){x.addEventListener('change',update)});
+  document.getElementById('mt-copy').addEventListener('click',function(){navigator.clipboard.writeText(output.value).then(function(){status.textContent='HTML copied to clipboard.'}).catch(function(){output.select();status.textContent='Select and copy the highlighted HTML.'})});update();
+})();
