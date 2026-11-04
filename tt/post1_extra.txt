@@ -74,3 +74,14 @@
 
 <h3>How long does a scan take?</h3>
 <p>Usually a few seconds. Slow external websites can take a bit longer, because the checker waits for each one to answer.</p>
+
+<h2>Your monthly broken link checklist</h2>
+<ul>
+<li>Scan your homepage with the free checker.</li>
+<li>Scan your five most visited pages.</li>
+<li>Fix every internal link that shows 404 or 410.</li>
+<li>Replace or remove dead external links.</li>
+<li>Point redirected links straight at their final address.</li>
+<li>Save the CSV export so you can compare next month.</li>
+</ul>
+<p>Ten minutes once a month is all it takes to keep your site feeling looked after, for your readers and for Google.</p>
