@@ -1,0 +1,76 @@
+<h2>Why links break in the first place</h2>
+
+<p>Before fixing anything, it helps to know where broken links come from. In my experience it's almost always one of these five things.</p>
+
+<h3>1. You changed a URL</h3>
+<p>This is the big one. You rename a post from "my-first-post" to "beginner-guide" because it sounds better, and every link pointing to the old address dies. Blogger, WordPress and most site builders don't always set up a redirect for you.</p>
+
+<h3>2. You deleted a page</h3>
+<p>Old announcements, expired offers, a product you stopped selling. The page is gone, but the links to it in your menus, sidebars and old posts are still there.</p>
+
+<h3>3. Another website moved things around</h3>
+<p>You can't control other sites. A news article you linked to gets archived, a company redesigns its website, or a small blog simply shuts down. Studies of web link rot keep finding the same thing: a big share of outbound links stop working within a few years.</p>
+
+<h3>4. Typos</h3>
+<p>A missing letter, an extra slash, "htps" instead of "https". It happens to everyone, especially when you paste links quickly on a phone.</p>
+
+<h3>5. HTTP to HTTPS and domain changes</h3>
+<p>If you moved your site to HTTPS or to a new domain, older links can end up in redirect chains or fail completely if the old address stops responding.</p>
+
+<h2>Internal links vs external links</h2>
+
+<p>It's worth treating these two differently, because you fix them in different ways.</p>
+
+<ul>
+<li><strong>Internal links</strong> point to other pages on your own site. These matter most, because they help Google discover and understand your pages. A broken internal link is a door in your own house that opens into a wall. Fix these first.</li>
+<li><strong>External links</strong> point to other websites. A broken one won't hurt you as much, but it still sends your reader to a dead end. Replace it with a working source or remove it.</li>
+</ul>
+
+<p>A good rule: if the link is in your menu, footer or sidebar, it appears on every page of your site, so one broken menu link is really dozens of broken links. Check those spots first.</p>
+
+<h2>A simple plan to clean up a whole site</h2>
+
+<p>If your site has more than a handful of pages, don't try to do everything in one sitting. Here's the order I'd follow.</p>
+
+<ol>
+<li><strong>Start with your homepage.</strong> It usually has the most links and the most visitors. Run it through the <a href="https://tinkro.pages.dev/tools/broken-link-checker">Broken Link Checker</a> and fix everything red.</li>
+<li><strong>Check your top five pages.</strong> Look at your analytics or Search Console and pick the pages that get the most clicks. These earn you the most traffic, so they deserve to be clean.</li>
+<li><strong>Check your menu and footer once.</strong> Because they repeat on every page, fixing them once fixes them everywhere.</li>
+<li><strong>Work through older posts.</strong> Older content is where link rot builds up. Do a few posts a week until you're through them.</li>
+<li><strong>Export and keep a list.</strong> The checker lets you export results as a CSV file. Keep it, so next month you can see what's new.</li>
+</ol>
+
+<h2>How to stop links breaking in the future</h2>
+
+<p>Fixing links is good. Not breaking them in the first place is better. A few habits make a huge difference:</p>
+
+<ul>
+<li><strong>Pick a URL and keep it.</strong> Decide on a clean, short permalink when you publish, and avoid changing it later.</li>
+<li><strong>Redirect when you must move a page.</strong> If you do change an address, set up a 301 redirect from the old one to the new one.</li>
+<li><strong>Link to stable sources.</strong> Official documentation, well-known sites and your own pages last longer than random forum posts.</li>
+<li><strong>Don't delete, update.</strong> If an old post is outdated, refresh it instead of removing it. You keep its links and its search ranking.</li>
+<li><strong>Check after big changes.</strong> Redesigned your site or changed your theme? Run a quick scan the same day.</li>
+</ul>
+
+<h2>Does fixing broken links really help SEO?</h2>
+
+<p>Honestly, broken links on their own won't tank your rankings overnight. Google has said a few 404s are normal on any site. But they cause problems that add up. Crawlers spend time on dead ends instead of your real pages, internal links stop passing value to the pages you care about, and visitors bounce. Fixing them is one of the cheapest SEO wins there is, because it takes minutes and costs nothing.</p>
+
+<p>Pair it with good titles and descriptions and you've covered the basics most small sites skip. If you want to see how your page will look in Google before you publish, try the free <a href="https://tinkro.pages.dev/tools/serp-snippet-preview">SERP Snippet Preview</a>.</p>
+
+<h2>Frequently asked questions</h2>
+
+<h3>Is the Tinkro Broken Link Checker really free?</h3>
+<p>Yes. No signup, no email and no limit on how many times you use it. Each scan checks up to 40 links on one page.</p>
+
+<h3>Can it check my whole website at once?</h3>
+<p>It checks one page per scan. For most small sites, checking the homepage, menu and top posts catches the majority of problems. Run it on each important page in turn.</p>
+
+<h3>What's the difference between a 404 and a 410?</h3>
+<p>A 404 means the page wasn't found. A 410 means it was removed on purpose and isn't coming back. For your visitors, both are dead ends, so fix or remove the link either way.</p>
+
+<h3>Are redirects bad?</h3>
+<p>One redirect is fine. Chains of several redirects slow the page down and can lose a little SEO value, so point links straight at the final address when you can.</p>
+
+<h3>How long does a scan take?</h3>
+<p>Usually a few seconds. Slow external websites can take a bit longer, because the checker waits for each one to answer.</p>
