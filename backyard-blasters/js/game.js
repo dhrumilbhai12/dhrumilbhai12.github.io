@@ -572,7 +572,7 @@ function update(dt) {
     manualT -= dt;
     if (hold && manualT <= 0) { aimAt(hold.x, hold.y); fire(hold.x, hold.y, true); manualT = 1 / (fireRate() * 1.5 + 3); }
     // buddy helper (after first boss win): small extra shots
-    if (S.bossWins > 0 && tgt) { buddyT -= dt; if (buddyT <= 0) { buddyT = 0.8; const bx = heroX - 40, by = groundY - hero.h - 40 + Math.sin(time * 3) * 8; const a = Math.atan2(groundY - tgt.h * 0.5 - by, tgt.x - bx);
+    if (S.bossWins > 0 && tgt) { buddyT -= dt; if (buddyT <= 0) { buddyT = 0.8; const bx = heroX - 135, by = groundY - hero.h * 0.8 - 20; const a = Math.atan2(groundY - tgt.h * 0.5 - by, tgt.x - bx);
       bullets.push({ x: bx + 40, y: by + 20, vx: Math.cos(a) * 1300, vy: Math.sin(a) * 1300, dmg: Math.max(1, Math.round(shotDmg() * 0.3)), crit: false, life: 1.2, buddy: 1 }); } }
     if (boss && !boss.moving) {
       boss.timer -= dt; boss.atkT -= dt;
@@ -883,7 +883,7 @@ function drawHUD() {
 }
 function drawBuddy() {
   if (!S.bossWins || !IMG.buddy) return;
-  const img = IMG.buddy, h = 78, w = img.width / img.height * h, x = heroX - 70, y = groundY - hero.h - 70 + Math.sin(time * 3) * 8;
+  const img = IMG.buddy, h = 78, w = img.width / img.height * h, x = heroX - 105, y = groundY - hero.h * 0.8 + Math.sin(time * 3) * 8;
   ctx.drawImage(img, x - w / 2, y - h / 2, w, h);
 }
 function drawToast() {
